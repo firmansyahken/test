@@ -575,30 +575,17 @@ body {
   max-width: 1200px;
   padding: 5rem 1.5rem;
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 50px;
 }
 
-.footer .footer_link {
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  width: 50%;
-  justify-content: space-between;
-}
-
-.footer .footer_link a {
-  color: white;
-  text-decoration: none;
-  font-size: var(--body-size);
-}
-
-.footer .footer_desc p {
+.footer p {
   color: white;
   font-size: var(--body-size);
-  text-align: right;
+  text-align: center;
+}
+
+.footer p a {
+  color: white;
+  font-size: var(--body-size);
 }
 
 .copyright {
