@@ -27,12 +27,12 @@ const popupBtn = document.getElementById("popup_toggle");
 // const navMobileContainer = document.querySelector(".navbar_mobile_container")
 // const navBtn = document.getElementById("navbar_toggle")
 
-setTimeout(() => {
+window.addEventListener("load", () => {
   preloader.classList.add("disable");
   setTimeout(() => {
     preloader.style.display = "none";
   }, 100);
-}, 2000);
+});
 
 // navBtn.addEventListener("click", function() {
 //   navMobileContainer.classList.toggle("active")
@@ -43,6 +43,12 @@ setTimeout(() => {
 popupBtn.addEventListener("click", function () {
   document.querySelector(".popup").style.display = "none";
   document.body.style.overflow = "scroll";
+});
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    popupBtn.click();
+  }, 5000);
 });
 
 // navLink.forEach(link => {
@@ -58,3 +64,15 @@ popupBtn.addEventListener("click", function () {
 
 //   })
 // })
+
+var Tawk_API = Tawk_API || {},
+  Tawk_LoadStart = new Date();
+(function () {
+  var s1 = document.createElement("script"),
+    s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = "https://embed.tawk.to/62e145b637898912e95fee06/1g8vvgls4";
+  s1.charset = "UTF-8";
+  s1.setAttribute("crossorigin", "*");
+  s0.parentNode.insertBefore(s1, s0);
+})();

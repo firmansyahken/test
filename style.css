@@ -150,7 +150,7 @@ header {
   position: absolute;
   top: 100%;
   left: 0;
-  max-width: 30rem;
+  max-width: 20rem;
   min-width: 10rem;
   width: max-content;
   transform: translateY(10px);
@@ -467,9 +467,9 @@ header {
 }
 
 .preloader {
-  display: none;
+  display: block;
   position: fixed;
-  z-index: 100;
+  z-index: 10000010000;
   top: 0;
   left: 0;
   bottom: 0;
@@ -501,7 +501,8 @@ header {
 }
 
 .preloader .preloader_container img {
-  width: 30%;
+  width: 100%;
+  max-width: 94px;
 }
 
 .preloader .preloader_container h2 {
