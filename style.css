@@ -36,7 +36,7 @@ header {
   background-color: var(--dark-color);
   width: 100%;
   padding: 1rem 0;
-  z-index: 99;
+  z-index: 80;
 }
 
 .overlay {
@@ -280,16 +280,23 @@ header {
   display: none;
 }
 
-#check:checked ~ .hamburger-menu-container .hamburger-menu div {
+#check:checked ~ .hamburger-menu-container .hamburger-menu div,
+.mobile-menu.open .hamburger-menu-container .hamburger-menu div {
   background-color: transparent;
 }
 
-#check:checked ~ .hamburger-menu-container .hamburger-menu div:before {
+#check:checked ~ .hamburger-menu-container .hamburger-menu div:before,
+.mobile-menu.open .hamburger-menu-container .hamburger-menu div:before {
   transform: translateY(0) rotate(-45deg);
 }
 
-#check:checked ~ .hamburger-menu-container .hamburger-menu div:after {
+#check:checked ~ .hamburger-menu-container .hamburger-menu div:after,
+.mobile-menu.open .hamburger-menu-container .hamburger-menu div:after {
   transform: translateY(0) rotate(45deg);
+}
+
+.mobile-menu {
+  display: none;
 }
 
 @keyframes animation {
@@ -312,10 +319,11 @@ header {
     display: block;
   }
 
-  .nav-btn {
+  .nav-btn,
+  .mobile-menu {
     position: fixed;
-    height: calc(100vh - 3rem);
-    top: 3rem;
+    height: calc(100vh - 4rem);
+    top: 4rem;
     left: 0;
     width: 100%;
     background-color: var(--dark-color);
@@ -328,12 +336,21 @@ header {
     transition: 0.65s;
   }
 
-  #check:checked ~ .nav-btn {
+  .mobile-menu {
+    display: block;
+    height: 100vh;
+    top: 0;
+    z-index: 99;
+    padding: 1rem 0;
+  }
+
+  .mobile-menu.open,
+  .mobile-menu.open .nav-btn {
     transform: translateX(0);
   }
 
-  #check:checked ~ .nav-btn .nav-link,
-  #check:checked ~ .nav-btn .log-sign {
+  .mobile-menu.open .nav-link,
+  .mobile-menu.open .log-sign {
     animation: animation 0.5s ease forwards var(--i);
   }
 
